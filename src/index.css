@@ -1,0 +1,54 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600&display=swap');
+
+@theme {
+  --font-heading: "Instrument Serif", serif;
+  --font-body: "Barlow", sans-serif;
+}
+
+:root {
+  --background: 213 45% 67%;
+  --foreground: 0 0% 100%;
+  --primary: 0 0% 100%;
+  --border: 0 0% 100% / 0.3;
+  --radius: 9999px;
+}
+
+html, body {
+  overflow: hidden;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: black;
+}
+
+.liquid-glass {
+  background: rgba(255, 255, 255, 0.05); 
+  background-blend-mode: luminosity;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(25px);
+}
+
+.liquid-glass::before {
+  content: '';
+  position: absolute; inset: 0;
+  border-radius: inherit;
+  padding: 1.2px;
+  background: linear-gradient(180deg, 
+    rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.1) 20%, 
+    rgba(255,255,255,0) 40%, rgba(255,255,255,0) 60%, 
+    rgba(255,255,255,0.1) 80%, rgba(255,255,255,0.4) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+.robot-glow {
+  filter: drop-shadow(0 0 25px rgba(100, 200, 255, 0.4));
+}
