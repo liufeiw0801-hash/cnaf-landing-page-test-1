@@ -365,7 +365,7 @@ export default function App() {
 
     try {
       // 2. 发送到后端
-      const response = await axios.post('http://localhost:5001/api/chat', {
+      const response = await axios.post('https://cnaf-server.onrender.com/api/chat', {
         message: userMessage
       });
 
